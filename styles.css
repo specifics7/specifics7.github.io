@@ -1,0 +1,85 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.header-banner {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.star-image {
+    width: 1000px; 
+    display: block;
+    margin: 20px auto;
+}
+
+#shoot-btn {
+    margin: 40px auto;
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#shoot-btn:hover {
+    background-color: #ddd;
+}
+
+#sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 8px white, 0 0 30px 12px #99ccff;
+    animation: shoot 1.2s ease-out forwards;
+}
+
+.shooting-star::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, white, transparent);
+    transform: rotate(45deg);
+    opacity: 0.6;
+    filter: blur(2px);
+}
+
+@keyframes shoot {
+    0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 1;
+    }
+    100% {
+    transform: translate(100vw, 100vh) rotate(45deg);
+    opacity: 0;
+    }
+}
